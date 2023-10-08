@@ -1,8 +1,12 @@
 const { CosmosClient } = require('@azure/cosmos');
+const dotenv = require('dotenv')
+dotenv.config({ path: './.env' });
 
-require('dotenv').config();
-const endpoint = process.env.COSMOS_ENDPOINT; // ŠÂ‹«•Ï”‚©‚çƒGƒ“ƒhƒ|ƒCƒ“ƒg‚ğæ“¾
-const key = process.env.COSMOS_KEY; // ŠÂ‹«•Ï”‚©‚çƒL[‚ğæ“¾
+// const endpoint = process.env.COSMOS_ENDPOINT; // ï¿½Â‹ï¿½ï¿½Ïï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½hï¿½|ï¿½Cï¿½ï¿½ï¿½gï¿½ï¿½ï¿½æ“¾
+// const key = process.env.COSMOS_KEY; // ï¿½Â‹ï¿½ï¿½Ïï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½[ï¿½ï¿½ï¿½æ“¾
+
+const endpoint = 'https://bigbrother.documents.azure.com:443/'
+const key = 'TEa0iSj24m68YiPLnCVYSMKxwMRPpBRFfONcr24zt00wc7Z0VeW6smbXFInwO20VD7USNnSUzF2IACDbJaek2w'
 
 var client = new CosmosClient({ endpoint: endpoint, key: key });
 

@@ -13,13 +13,10 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var sample = require('./api/sample');
 var sample2 = require('./api/sample2');
+var addLocLog = require('./routes/addLocationLog')
 
-// .envƒtƒ@ƒCƒ‹‚©‚çŠÂ‹«•Ï”æ“¾
+// .envï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â‹ï¿½ï¿½Ïï¿½ï¿½æ“¾
 require('dotenv').config();
-console.log(`process.env.COSMOS_ACCOUNT:${process.env.COSMOS_ACCOUNT}`);
-console.log(`process.env.COSMOS_DATABASE:${process.env.COSMOS_DATABASE}`);
-console.log(`process.env.COSMOS_ENDPOINT:${process.env.COSMOS_ENDPOINT}`);
-console.log(`process.env.COSMOS_KEY:${process.env.COSMOS_KEY}`);
 
 var app = express();
 
@@ -44,13 +41,14 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/sample', sample);
 app.use('/sample2', sample2);
+app.use('/addLocLog', addLocLog)
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
+// app.use(function (req, res, next) {
+//     var err = new Error('Not Found');
+//     err.status = 404;
+//     next(err);
+// });
 
 // error handlers
 
