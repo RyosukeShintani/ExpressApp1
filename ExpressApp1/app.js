@@ -1,5 +1,7 @@
 'use strict';
 var debug = require('debug')('my express app');
+//const fs = require('fs');
+//const https = require('https');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -11,7 +13,19 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var sample = require('./api/sample');
 
+// .envƒtƒ@ƒCƒ‹‚©‚çŠÂ‹«•Ï”Žæ“¾
+require('dotenv').config();
+console.log(`process.env.COSMOS_ACCOUNT:${process.env.COSMOS_ACCOUNT}`);
+console.log(`process.env.COSMOS_DATABASE:${process.env.COSMOS_DATABASE}`);
+console.log(`process.env.COSMOS_ENDPOINT:${process.env.COSMOS_ENDPOINT}`);
+console.log(`process.env.COSMOS_KEY:${process.env.COSMOS_KEY}`);
+
 var app = express();
+
+//const options = {
+//    key: fs.readFileSync('private-key.pem'),
+//    cert: fs.readFileSync('certificate.pem')
+//};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -62,6 +76,9 @@ app.use(function (err, req, res, next) {
 
 app.set('port', process.env.PORT || 3000);
 
+//https.createServer(options, app).listen(3000, () => {
+//    console.log('Server is listening on https://localhost:3000/');
+//});
 var server = app.listen(app.get('port'), function () {
     debug('Express server listening on port ' + server.address().port);
 });

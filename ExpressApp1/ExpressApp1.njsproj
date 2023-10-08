@@ -29,8 +29,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".env" />
     <Content Include="api\sample.js" />
     <Content Include="app.js" />
+    <Content Include="certificate.pem" />
+    <Content Include="CosmosClient.js" />
+    <None Include="Properties\PublishProfiles\bigbrother-srv - Web Deploy.pubxml" />
+    <Content Include="private-key.pem" />
     <Content Include="routes\index.js" />
     <Content Include="routes\users.js" />
     <Content Include="package.json" />
@@ -42,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="api\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
