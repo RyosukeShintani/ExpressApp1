@@ -12,6 +12,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var sample = require('./api/sample');
+var sample2 = require('./api/sample2');
 
 // .envƒtƒ@ƒCƒ‹‚©‚çŠÂ‹«•Ï”æ“¾
 require('dotenv').config();
@@ -42,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/sample', sample);
+app.use('/sample2', sample2);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
