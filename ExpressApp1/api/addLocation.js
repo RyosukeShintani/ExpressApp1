@@ -21,6 +21,7 @@ router.post('/', function (req, res) {
 		.then((data)=>{
 			osmData = data
 			console.log({"userId":userId, "latitude":latitude, "longitude":latitude, "locationName":osmData.name, "osmData":osmData, "date":date})
+			res.send("information sent")
 		})
 
 	
