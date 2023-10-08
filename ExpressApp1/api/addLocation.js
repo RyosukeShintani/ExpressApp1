@@ -7,9 +7,6 @@ var router = express.Router();
 	//latitude: 位置情報の緯度
 	//longitude: 位置情報の経度
 router.post('/', function (req, res) {
-	//if(!req.body.userId) { res("error: ","userId is required")}
-	//TODO:上みたいなエラー処理を書く
-
 	const userId = req.body.userId;
 	const latitude = req.body.latitude;
 	const longitude = req.body.longitude;
@@ -23,7 +20,7 @@ router.post('/', function (req, res) {
 		.then((response)=>response.json())
 		.then((data)=>{
 			osmData = data
-			res.send({"userId":userId, "latitude":latitude, "longitude":latitude, "locationName":osmData.name, "date":date})
+			console.log({"userId":userId, "latitude":latitude, "longitude":latitude, "locationName":osmData.name, "osmData":osmData, "date":date})
 		})
 
 	
