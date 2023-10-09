@@ -1,8 +1,8 @@
 const { CosmosClient } = require('@azure/cosmos');
 
 require('dotenv').config();
-const endpoint = process.env.COSMOS_ENDPOINT; // ŠÂ‹«•Ï”‚©‚çƒGƒ“ƒhƒ|ƒCƒ“ƒg‚ğæ“¾
-const key = process.env.COSMOS_KEY; // ŠÂ‹«•Ï”‚©‚çƒL[‚ğæ“¾
+const endpoint = process.env.COSMOS_ENDPOINT; // ç’°å¢ƒå¤‰æ•°ã‹ã‚‰ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆã‚’å–å¾—
+const key = process.env.COSMOS_KEY; // ç’°å¢ƒå¤‰æ•°ã‹ã‚‰ã‚­ãƒ¼ã‚’å–å¾—
 
 var client = new CosmosClient({ endpoint: endpoint, key: key });
 

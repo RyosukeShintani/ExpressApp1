@@ -14,13 +14,10 @@ var users = require('./routes/users');
 var sample = require('./api/sample');
 var list = require('./api/list');
 var sample2 = require('./api/sample2');
+var addLocLog = require('./routes/addLocationLog')
 
 // .env�t�@�C��������ϐ��擾
 require('dotenv').config();
-console.log(`process.env.COSMOS_ACCOUNT:${process.env.COSMOS_ACCOUNT}`);
-console.log(`process.env.COSMOS_DATABASE:${process.env.COSMOS_DATABASE}`);
-console.log(`process.env.COSMOS_ENDPOINT:${process.env.COSMOS_ENDPOINT}`);
-console.log(`process.env.COSMOS_KEY:${process.env.COSMOS_KEY}`);
 
 var app = express();
 
@@ -46,6 +43,7 @@ app.use('/users', users);
 app.use('/sample', sample);
 app.use('/list', list);
 app.use('/sample2', sample2);
+app.use('/addLocLog', addLocLog)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
