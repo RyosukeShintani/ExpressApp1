@@ -30,6 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include=".env" />
+    <Content Include="api\sample2.js" />
     <Content Include="api\sample.js" />
     <Content Include="app.js" />
     <Content Include="certificate.pem" />

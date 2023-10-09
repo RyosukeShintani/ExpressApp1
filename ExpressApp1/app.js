@@ -13,6 +13,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var sample = require('./api/sample');
 var list = require('./api/list');
+var sample2 = require('./api/sample2');
 
 // .env�t�@�C��������ϐ��擾
 require('dotenv').config();
@@ -44,6 +45,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/sample', sample);
 app.use('/list', list);
+app.use('/sample2', sample2);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
