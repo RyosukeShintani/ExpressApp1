@@ -12,9 +12,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var sample = require('./api/sample');
+var list = require('./api/list');
 var sample2 = require('./api/sample2');
 
-// .envƒtƒ@ƒCƒ‹‚©‚çŠÂ‹«•Ï”æ“¾
+// .envï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â‹ï¿½ï¿½Ïï¿½ï¿½æ“¾
 require('dotenv').config();
 console.log(`process.env.COSMOS_ACCOUNT:${process.env.COSMOS_ACCOUNT}`);
 console.log(`process.env.COSMOS_DATABASE:${process.env.COSMOS_DATABASE}`);
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/sample', sample);
+app.use('/list', list);
 app.use('/sample2', sample2);
 
 // catch 404 and forward to error handler
