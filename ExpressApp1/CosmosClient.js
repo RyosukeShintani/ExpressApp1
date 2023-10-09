@@ -1,9 +1,8 @@
 const { CosmosClient } = require('@azure/cosmos');
-const dotenv = require('dotenv')
-// dotenv.config({ path: './.env' });
-dotenv.config();
-const endpoint = process.env.COSMOS_ENDPOINT; // ���ϐ�����G���h�|�C���g���擾
-const key = process.env.COSMOS_KEY; // ���ϐ�����L�[���擾
+
+require('dotenv').config();
+const endpoint = process.env.COSMOS_ENDPOINT; // 環境変数からエンドポイントを取得
+const key = process.env.COSMOS_KEY; // 環境変数からキーを取得
 
 var client = new CosmosClient({ endpoint: endpoint, key: key });
 
