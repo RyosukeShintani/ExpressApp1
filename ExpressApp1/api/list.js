@@ -34,7 +34,7 @@ var router = express.Router();
 
 router.get('/', async function (req, res) {
     console.log(req.query)
-    const limit = req.query.maxItemCount
+    const limit = req.query.maxItemCount || 1;
     const database = client.database(process.env.COSMOS_DATABASE);
     const container = database.container('LocationLog');
 
