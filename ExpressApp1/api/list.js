@@ -36,12 +36,12 @@ router.get('/', async function (req, res) {
     console.log(req.query)
     const limit = req.query.maxItemCount
     const database = client.database(process.env.COSMOS_DATABASE);
-    const container = database.container('Users');
+    const container = database.container('LocationLog');
 
     const response = await container
         .items
         .query(
-            `SELECT * from c ORDER BY c.RegistDate OFFSET 0 LIMIT ${limit} `
+            `SELECT * from c ORDER BY c.RegistDate DESC OFFSET 0 LIMIT ${limit} `
             )
         .fetchAll();
 
