@@ -16,10 +16,10 @@ router.post('/', async function (req, res) {
             const json = {
                 id: uuidv4(),
                 Partition: 'Common',
-                UserId: req.body.UserId || 0,
-                LocationName: data.display_name,
-                Latitude: req.body.latitude || 0,
-                Longitude: req.body.longitude || 0,
+                UserId: req.body.UserId || '0',
+                LocationName: data.display_name || '',
+                Latitude: req.body.latitude || 0.00,
+                Longitude: req.body.longitude || 0.00,
                 RegistDate: new Date().toISOString()
             };
             const response = await container.items.create(json)
